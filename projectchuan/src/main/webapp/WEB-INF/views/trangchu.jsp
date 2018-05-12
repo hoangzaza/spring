@@ -4,14 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="resource/css/styles.css"/>
 <title>Insert title here</title>
-
+<jsp:include page="header.jsp"></jsp:include>
 </head>
 <body>
 	<a href="/chitiet" id="testthea">Qua sang chi tiết</a>
 	${hoten}
 <!-- để dùng được modelattribute thì tên các trường phải giống với tên thuộc tính của đối tượng (phải truyền tất cả các thuộc tính với kiểu dữ liệu nguyên thủy) -->
-	
+	<p>Đây là đoạn văn có chứa CSS </p>
 </body>
 </html>
