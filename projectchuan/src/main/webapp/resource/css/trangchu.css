@@ -1,0 +1,160 @@
+@charset "ISO-8859-1";
+html,body{
+	font-family: Roboto !important;
+	font-size: 14px;
+}
+#header{
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.42), 
+      rgba(0, 0, 0, 0.42)
+    ), url("../images/background.jpg") no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	height: 632px;
+}
+.none-nav{
+	background: none !important;
+	border: none !important;
+}
+.nav-center{
+	margin-left: 30%;
+}
+
+.navbar-nav a{
+	color: white !important;
+}
+
+.active a{
+	color: #0167FF !important;
+	font-weight: bold;
+}
+.navbar-brand{
+	font-size: 28px !important;
+}
+
+.event_header{
+	text-align: center;
+	margin-top: 20%;
+}
+
+.event_header span{
+	color: white;
+}
+
+#brand{
+	color: #00ff00 !important;
+}
+
+.dropdown-menu{
+	background-color:#0167ff !important; 
+}
+
+#content-event{
+	font-size: 50px;
+	font-weight: bold;
+}
+.event_header button{
+	color: white;
+	background: #39ffe1;
+	border: #39ffe1;
+}
+
+.material-button{
+	width: 100%;
+	height: 38px;
+	border: 0;
+	background-color: #00909C;
+	color: white;
+	font-size: 14px;
+	box-shadow: 0px 2px 4px 0px #000;
+	
+}
+
+@media (max-width: 575.98px) { 
+	.nav-center{
+	margin-left: 0 !important;
+}
+
+ }
+
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+.nav-center{
+	margin-left: 0 !important;
+}
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+.nav-center{
+	margin-left: 8% !important;
+}
+}
+
+#info img{
+	width: 48px;
+	height: 48px;
+}
+
+#info span{
+	margin-top: 16px;
+}
+#info{
+	text-align: center;
+	margin-top: 48px;
+}
+
+#text-hot{
+	margin-top:100px;
+	text-align: center;
+	font-weight: 500;
+	font-size: 32px;
+	
+}
+
+.sanpham{
+	margin-top: 24px;
+	margin-bottom: 16px !important;
+}
+
+.price{
+	font-size: 14px;
+	color: red;
+}
+
+#footer{
+	
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.42), 
+      rgba(0, 0, 0, 0.42)
+    ), url("../images/background_footer.jpg") no-repeat; 
+     -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	
+	margin-top: 42px;
+	color: white;
+	background-color: black;
+	padding-top: 32px;
+}
+
+#footer span{
+	
+}
+
+#footer p{
+	text-align: center;
+}
+.title-footer{	
+	font-size: 32px;	
+}
+
+.text-input{
+	width: 100%;
+	margin-bottom: 8px;
+	background-color: #EAEAEA;
+}
+

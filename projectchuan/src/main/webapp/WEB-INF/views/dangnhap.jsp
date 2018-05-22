@@ -11,6 +11,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet" type="text/css"
 	href='<c:url value="/resource/css/login.css"/> '>
+	<jsp:include page="header.jsp"/>
 </head>
 <body id="body-login">
 	<div id="body-flex-login">
@@ -48,8 +49,8 @@
 
 				<div id="container-center-right">
 					<form action="">
-						<input class="text-input input-icon-email" placeholder="Email" type="text"><br>
-						<input class="text-input input-icon-password" placeholder="Mật khẩu" type="password"> <br>
+						<input class="input-icon-email" placeholder="Email" type="text"><br>
+						<input class="input-icon-password" placeholder="Mật khẩu" type="password"> <br>
 						<input class="button-login" type="submit" value="ĐĂNG NHẬP"> <br>
 
 
@@ -73,6 +74,6 @@
 
 
 	</div>
-
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>
