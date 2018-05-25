@@ -11,7 +11,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet" type="text/css"
 	href='<c:url value="/resource/css/login.css"/> '>
-	<jsp:include page="header.jsp"/>
+<jsp:include page="header.jsp" />
 </head>
 <body id="body-login">
 	<div id="body-flex-login">
@@ -44,26 +44,40 @@
 			</div>
 			<div id="container-login-right">
 				<div id="header-top-right" class="header-login">
-					<span class="actived">Đăng nhập</span>/<span>Đăng ký</span>
+					<span class="actived" id="dangnhap">Đăng nhập</span>/<span id="dangky">Đăng ký</span>
 				</div>
 
 				<div id="container-center-right">
-					<form action="">
-						<input class="input-icon-email" placeholder="Email" type="text"><br>
-						<input class="input-icon-password" placeholder="Mật khẩu" type="password"> <br>
-						<input class="button-login" type="submit" value="ĐĂNG NHẬP"> <br>
-
-
-					</form>
-
-
+						<div class="container-login-form" id="container-center-right">
+						<input id="tendangnhap" name="tendangnhap" class="input-icon-email"
+							placeholder="Email" type="text"><br><p></p>
+							<input id="matkhau"
+							name="matkhau" class="input-icon-password" placeholder="Mật khẩu"
+							type="password"> <br> 
+							<input class="button-login" id="btnDangNhap"
+							type="submit" value="ĐĂNG NHẬP"> <br>
+							</div>
+							
+							<div class="container-signup-form" id="container-center-right">
+							<input id="tendangnhapdangky" name="tendangnhapdangky" class="input-icon-email"
+							placeholder="Email" type="text"><br><p></p>
+							<input id="matkhaudangky"
+							name="matkhaudangky" class="input-icon-password" placeholder="Mật khẩu"
+							type="password"> <br> <p></p>
+							<input id="nhaplaimatkhau"
+							name="nhaplaimatkhau" class="input-icon-password" placeholder="Nhập lại mật khẩu"
+							type="password"> <br> 
+							<input class="button-login" id="btnDangKy"
+							type="submit" value="ĐĂNG KÝ"> <br>
+							</div>
+							<span id="ketqua"></span>
 				</div>
-				
+
 				<div id="social-icon">
-				<img alt="icon_facebook"
-							src='<c:url value="/resource/images/icon_fb.png"/>'>
-							<img alt="icon_google"
-							src='<c:url value="/resource/images/icon_gg.png"/>'>
+					<img alt="icon_facebook"
+						src='<c:url value="/resource/images/icon_fb.png"/>'> <img
+						alt="icon_google"
+						src='<c:url value="/resource/images/icon_gg.png"/>'>
 				</div>
 
 
@@ -74,6 +88,6 @@
 
 
 	</div>
-	<jsp:include page="footer.jsp"/>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

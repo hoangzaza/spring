@@ -2,6 +2,8 @@ package com.hoangnv.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,27 +15,29 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.hoangnv.entity.MatHang;
 
 @Controller
 @RequestMapping("/")
+@SessionAttributes("tendangnhap")
 public class TrangChuController {
 	@Autowired
 	SessionFactory mySessionFactory;
 	//autowired nó sẽ lấy bean có id cùng tên với cái này
 	
-//	phương thức get giống với @RequestMapping(path="/", method=RequestMethod.GET) khi không có tham số nó sẽ nhảy vào đây
 	@GetMapping
 	@Transactional
-	public String Default(ModelMap modelMap) {
-		Session session=mySessionFactory.getCurrentSession();
-		//select * thì không cần điền vào còn nếu lấy ít trường hơn thì cần select
-		String sql="from MatHang";
-		List<MatHang> list=session.createQuery(sql).getResultList();
-		for(MatHang mh:list) {
-			System.out.println(mh.getTenMatHang());
+	public String Default(ModelMap modelMap,HttpSession httpSession) {
+		if(httpSession.getAttribute("tendangnhap")!=null) {
+			System.out.println(httpSession.getAttribute("tendangnhap"));
+			//lấy session bên controller
+			
 		}
+		Session session=mySessionFactory.getCurrentSession();
+		
+		
 		return "trangchu";
 	}
 	
@@ -45,9 +49,46 @@ public class TrangChuController {
 //	}
 	
 	
-	@PostMapping
-	public String themNhanVien(@RequestParam("tenNhanVien") String tenNhanVien,@RequestParam("tuoi") int tuoi) {
-		return "trangchu";
-	}
+//	@PostMapping
+//	@Transactional
+//	public String themNhanVien(@RequestParam("tenNhanVien") String tenNhanVien,@RequestParam("tuoi") int tuoi) {
+//		Session session=mySessionFactory.getCurrentSession();
+//		NhanVien nv=new NhanVien(tenNhanVien, tuoi);
+//		//them nhan vien
+//		session.save(nv);
+//		return "trangchu";
+//	}
+	
+	//one to one
+//	NhanVien nv=new NhanVien();
+////	nv.setIdNhanVien(4);
+//	nv.setTenNhanVien("NVH");
+//	nv.setTuoi(22);
+//	
+//	MatHang mh=new MatHang();
+//	mh.setIdMatHang(3);
+//	mh.setTenMatHang("hangf 1");
+//	mh.setGia(10000);
+//	mh.setMoTa("day la mo ta");
+//	mh.setNhanVien(nv);
+//	
+//	session.save(mh);
+//	
+////	//update nhan vien
+////	NhanVien nv=(NhanVien)session.createQuery("from NhanVien where Tuoi=90").getSingleResult();
+////	nv.setTuoi(69);
+////	session.update(nv);
+////	
+////	//xoa nhan vien
+////	NhanVien nv1=(NhanVien)session.createQuery("from NhanVien where Tuoi=69").getSingleResult();
+////	session.delete(nv1);
+////	
+//	
+//	//select * thì không cần điền vào còn nếu lấy ít trường hơn thì cần select
+//	String sql="from NhanVien1";
+//	List<NhanVien> list=session.createQuery(sql).getResultList();
+//	for(NhanVien nhanVien:list) {
+//		System.out.println(nhanVien.getTenNhanVien()+nhanVien.getTuoi());
+//	}
 	
 }

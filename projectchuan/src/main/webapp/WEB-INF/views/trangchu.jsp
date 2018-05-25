@@ -42,8 +42,18 @@
 				<li class="nav-item"><a class="nav-link" href="#">LIÊN HỆ</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="nav-item"><a class="nav-link" href="#">ĐĂNG KÝ</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">ĐĂNG NHẬP</a>
+				<li class="nav-item"><a class="nav-link" href="dangnhap/">
+				<c:choose>
+				<c:when test="${tendangnhap!=null }">
+				<c:out value="${tendangnhap}"/>
+				</c:when>
+				<c:otherwise>
+				ĐĂNG NHẬP
+				</c:otherwise>
+				
+				</c:choose>
+				
+				</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" href="#"> <img
 						alt="icon cart"
