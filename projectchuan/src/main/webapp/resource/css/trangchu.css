@@ -106,6 +106,31 @@ html,body{
 	margin-top: 48px;
 }
 
+ul{
+	list-style-type: none;
+}
+
+.mymenu li > ul {
+	display: none;
+}
+
+.mymenu li:hover >ul{
+	display: block;
+	/*hover là được rê chuột qua làm menu đa cấp rê chuột qua mở ra con nó*/
+}
+
+
+.mymenu{
+	padding: 0px;
+	margin: 0px;
+}
+
+.mymenu li{
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px 0px;
+}
+
 #text-hot{
 	margin-top:100px;
 	text-align: center;
@@ -158,3 +183,20 @@ html,body{
 	background-color: #EAEAEA;
 }
 
+.circle-avatar{
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: green;
+	text-align: center;
+	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+
+/* css chi tiet*/
+
+#header-chitiet{
+	background-color: black;
+}

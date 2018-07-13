@@ -13,23 +13,24 @@ public class MauSanPham {
 	@Column(name="MaMau")
 	private int maMau;
 	@Column(name="MauSanPham")
-	private String mauSanPham;
+	private String tenMau;
 	public int getMaMau() {
 		return maMau;
 	}
 	public void setMaMau(int maMau) {
 		this.maMau = maMau;
 	}
-	public String getMauSanPham() {
-		return mauSanPham;
-	}
-	public void setMauSanPham(String mauSanPham) {
-		this.mauSanPham = mauSanPham;
-	}
-	public MauSanPham(int maMau, String mauSanPham) {
+	
+	public MauSanPham(int maMau, String tenMau) {
 		super();
 		this.maMau = maMau;
-		this.mauSanPham = mauSanPham;
+		this.tenMau = tenMau;
+	}
+	public String getTenMau() {
+		return tenMau;
+	}
+	public void setTenMau(String tenMau) {
+		this.tenMau = tenMau;
 	}
 	public MauSanPham() {
 		super();

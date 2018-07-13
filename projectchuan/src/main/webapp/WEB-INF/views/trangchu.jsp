@@ -42,20 +42,20 @@
 				<li class="nav-item"><a class="nav-link" href="#">LIÊN HỆ</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="nav-item"><a class="nav-link" href="dangnhap/">
+				<li class="nav-item">
 				<c:choose>
 				<c:when test="${tendangnhap!=null }">
-				<c:out value="${tendangnhap}"/>
+				<a class="nav-link circle-avatar" href="#">${chucaidau}</a>
 				</c:when>
 				<c:otherwise>
-				ĐĂNG NHẬP
+				<a class="nav-link" href="dangnhap/">ĐĂNG NHẬP</a>
 				</c:otherwise>
 				
 				</c:choose>
 				
-				</a>
+				
 				</li>
-				<li class="nav-item"><a class="nav-link" href="#"> <img
+				<li class="nav-item"><a class="nav-link" href="#"> <img style="margin-top: 10px"
 						alt="icon cart"
 						src='<c:url value="/resource/images/icon_cart.png"/> '>
 				</a></li>
@@ -99,144 +99,22 @@
 	<div id="text-hot" class="container">
 		<span>SẢN PHẨM HOT</span>
 		<div class="row" style="margin-top: 48px">
-
+			
+			<c:forEach var="sanpham" items="${listsanpham}">
 			<div class="col-md-3 col-sm-6">
+				<a href="chitiet/${sanpham.getMaSanPham()}">
 				<div class="card sanpham wow zoomIn">
-					<img class="card-img-top" alt="hình sản phẩm"
-						src='<c:url value="/resource/images/sanpham.png"/>'>
+					<img class="card-img-top" alt="hình sản phẩm" style="width:100%"
+						src='<c:url value="/resource/images/sanpham/${sanpham.getHinhSanPham()}"/>'>
 					<div class="card-body">
-						<span>Áo sơ mi</span><br> <span class="price">150.00
-							VNĐ</span>
+						<span>${sanpham.getTenSanPham()}</span><br> 
+						<span class="price">${sanpham.getGiaTien()} VND</span>
 					</div>
 				</div>
+				</a>
 			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<div class="card sanpham wow zoomIn">
-					<img class="card-img-top" alt="hình sản phẩm"
-						src='<c:url value="/resource/images/sanpham.png"/>'>
-					<div class="card-body">
-						<span>Áo sơ mi</span><br> <span class="price">150.00
-							VNĐ</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<div class="card sanpham wow zoomIn">
-					<img class="card-img-top" alt="hình sản phẩm"
-						src='<c:url value="/resource/images/sanpham.png"/>'>
-					<div class="card-body">
-						<span>Áo sơ mi</span><br> <span class="price">150.00
-							VNĐ</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<div class="card sanpham wow zoomIn">
-					<img class="card-img-top" alt="hình sản phẩm"
-						src='<c:url value="/resource/images/sanpham.png"/>'>
-					<div class="card-body">
-						<span>Áo sơ mi</span><br> <span class="price">150.00
-							VNĐ</span>
-					</div>
-				</div>
-			</div>
-
-		</div>
-		<div class="row">
-
-			<div class="col-md-3 col-sm-6">
-				<div class="card sanpham wow zoomIn">
-					<img class="card-img-top" alt="hình sản phẩm"
-						src='<c:url value="/resource/images/sanpham.png"/>'>
-					<div class="card-body">
-						<span>Áo sơ mi</span><br> <span class="price">150.00
-							VNĐ</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<div class="card sanpham wow zoomIn">
-					<img class="card-img-top" alt="hình sản phẩm"
-						src='<c:url value="/resource/images/sanpham.png"/>'>
-					<div class="card-body">
-						<span>Áo sơ mi</span><br> <span class="price">150.00
-							VNĐ</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<div class="card sanpham wow zoomIn">
-					<img class="card-img-top" alt="hình sản phẩm"
-						src='<c:url value="/resource/images/sanpham.png"/>'>
-					<div class="card-body">
-						<span>Áo sơ mi</span><br> <span class="price">150.00
-							VNĐ</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<div class="card sanpham wow zoomIn">
-					<img class="card-img-top" alt="hình sản phẩm"
-						src='<c:url value="/resource/images/sanpham.png"/>'>
-					<div class="card-body">
-						<span>Áo sơ mi</span><br> <span class="price">150.00
-							VNĐ</span>
-					</div>
-				</div>
-			</div>
-
-		</div>
-		<div class="row">
-
-			<div class="col-md-3 col-sm-6">
-				<div class="card sanpham wow zoomIn">
-					<img class="card-img-top" alt="hình sản phẩm"
-						src='<c:url value="/resource/images/sanpham.png"/>'>
-					<div class="card-body">
-						<span>Áo sơ mi</span><br> <span class="price">150.00
-							VNĐ</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<div class="card sanpham wow zoomIn">
-					<img class="card-img-top" alt="hình sản phẩm"
-						src='<c:url value="/resource/images/sanpham.png"/>'>
-					<div class="card-body">
-						<span>Áo sơ mi</span><br> <span class="price">150.00
-							VNĐ</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<div class="card sanpham wow zoomIn">
-					<img class="card-img-top" alt="hình sản phẩm"
-						src='<c:url value="/resource/images/sanpham.png"/>'>
-					<div class="card-body">
-						<span>Áo sơ mi</span><br> <span class="price">150.00
-							VNĐ</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<div class="card sanpham wow zoomIn">
-					<img class="card-img-top" alt="hình sản phẩm"
-						src='<c:url value="/resource/images/sanpham.png"/>'>
-					<div class="card-body">
-						<span>Áo sơ mi</span><br> <span class="price">150.00
-							VNĐ</span>
-					</div>
-				</div>
-			</div>
+			
+			</c:forEach>
 		</div>
 	</div>
 

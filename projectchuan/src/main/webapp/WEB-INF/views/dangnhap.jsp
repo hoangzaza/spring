@@ -59,6 +59,7 @@
 							</div>
 							
 							<div class="container-signup-form" id="container-center-right">
+							<form action="" method="post">
 							<input id="tendangnhapdangky" name="tendangnhapdangky" class="input-icon-email"
 							placeholder="Email" type="text"><br><p></p>
 							<input id="matkhaudangky"
@@ -69,7 +70,9 @@
 							type="password"> <br> 
 							<input class="button-login" id="btnDangKy"
 							type="submit" value="ĐĂNG KÝ"> <br>
+							</form>
 							</div>
+							${kiemtradangnhap}
 							<span id="ketqua"></span>
 				</div>
 

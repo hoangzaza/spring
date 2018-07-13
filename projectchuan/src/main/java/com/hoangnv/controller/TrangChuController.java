@@ -18,24 +18,29 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.hoangnv.entity.SanPham;
+import com.hoangnv.service.SanPhamService;
+
 
 @Controller
 @RequestMapping("/")
 @SessionAttributes("tendangnhap")
 public class TrangChuController {
 	@Autowired
-	SessionFactory mySessionFactory;
-	//autowired nó sẽ lấy bean có id cùng tên với cái này
+	SanPhamService sanPhamService;
 	
 	@GetMapping
 	@Transactional
 	public String Default(ModelMap modelMap,HttpSession httpSession) {
 		if(httpSession.getAttribute("tendangnhap")!=null) {
-			System.out.println(httpSession.getAttribute("tendangnhap"));
+			String tenDangNhap=(String) httpSession.getAttribute("tendangnhap");
+			String chuCaiDau=tenDangNhap.substring(0, 1).toUpperCase();
+			modelMap.addAttribute("chucaidau", chuCaiDau);
 			//lấy session bên controller
 			
 		}
-		Session session=mySessionFactory.getCurrentSession();
+		List<SanPham> liSanPhams=sanPhamService.layDanhSachSPlimit(0);
+		modelMap.addAttribute("listsanpham", liSanPhams);
 		
 		
 		return "trangchu";
